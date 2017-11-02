@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/layout-v21/notification_template_icon_group.xml"
+    }
+]

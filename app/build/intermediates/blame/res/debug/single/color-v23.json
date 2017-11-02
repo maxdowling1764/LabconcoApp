@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml",
+        "source": "/home/max/.android/build-cache/e445f1844b66111a8bb808edd31fc0e78566aa07/output/res/color-v23/design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/res/color-v23/abc_tint_switch_thumb.xml"
+    }
+]

@@ -1,0 +1,7 @@
+#Thu Nov 02 12:55:26 CDT 2017
+base.0=/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a525a85cafbc0022ab3d861a0aa8d3e171e53a1d
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_91393493a4c4dd86abd1a64a9b25ef16e1bf7b69/classes.dex
+base.1=/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_91393493a4c4dd86abd1a64a9b25ef16e1bf7b69
+file.0=/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a525a85cafbc0022ab3d861a0aa8d3e171e53a1d/classes.dex

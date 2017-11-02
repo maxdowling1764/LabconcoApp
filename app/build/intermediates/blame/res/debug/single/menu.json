@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/menu/main_screen.xml",
+        "source": "/home/max/AndroidStudioProjects/LabconcoApp/app/src/main/res/menu/main_screen.xml"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/menu/activity_main_screen_drawer.xml",
+        "source": "/home/max/AndroidStudioProjects/LabconcoApp/app/src/main/res/menu/activity_main_screen_drawer.xml"
+    }
+]

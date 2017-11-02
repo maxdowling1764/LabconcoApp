@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/home/max/AndroidStudioProjects/LabconcoApp/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
+        "source": "/home/max/AndroidStudioProjects/LabconcoApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    }
+]

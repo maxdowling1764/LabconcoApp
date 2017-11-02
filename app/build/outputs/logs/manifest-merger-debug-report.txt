@@ -1,0 +1,131 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:2:1-32:12
+	package
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+permission#android.permission.INTERNET
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:4:5-61
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:4:17-59
+permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:5:5-74
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:5:17-72
+permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:6:5-75
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:6:17-73
+uses-permission#android.permission.INTERNET
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:8:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:9:22-78
+application
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:10:5-30:19
+MERGED from [com.android.support:design:26.0.0-alpha1] /home/max/.android/build-cache/e445f1844b66111a8bb808edd31fc0e78566aa07/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /home/max/.android/build-cache/5d68c0661f887c83d1aa720fb4a2f4284ac2ca37/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /home/max/.android/build-cache/99ba0fa71f6280a071e4db903c15fd6ffeb70e61/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] /home/max/.android/build-cache/2b586e2fd4ceed184b24ed3d83d8e443d61b25ed/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /home/max/.android/build-cache/4e606303e1ea72fa7c61b1746a0e2be8ce053fb4/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /home/max/.android/build-cache/f8ffc1813e938f2c0c13ed417d158fae493a53d0/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /home/max/.android/build-cache/0448fce0ba74788e983db3fe379f44b96c5440e2/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /home/max/.android/build-cache/25428ec6958f34b9855464d52584a24719ed83d0/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /home/max/.android/build-cache/7d491b0c34bfb9bd316f6191084f3263bc788927/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /home/max/.android/build-cache/e2a3fccbf8778a8ab6402c4dcde30d78446d4038/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/max/.android/build-cache/e65d78a730ecb6fdc0d35c1695cedb31afd7194a/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.0.0] /home/max/.android/build-cache/d88757eaa234c0dc5004673abb6494a8efad857a/output/AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:13:9-41
+	android:supportsRtl
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:15:9-35
+	android:hardwareAccelerated
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:17:9-43
+	android:roundIcon
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:14:9-54
+	android:allowBackup
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:11:9-35
+	android:icon
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:12:9-43
+	android:theme
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:16:9-40
+activity#com.example.max.labconcoapp.MainScreen
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:18:9-29:20
+	android:label
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:20:13-45
+	android:permission
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:22:13-61
+	android:theme
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:21:13-56
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:19:13-39
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:24:13-28:29
+action#android.intent.action.MAIN
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:25:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:27:17-77
+	android:name
+		ADDED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml:27:27-74
+uses-sdk
+INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:design:26.0.0-alpha1] /home/max/.android/build-cache/e445f1844b66111a8bb808edd31fc0e78566aa07/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /home/max/.android/build-cache/5d68c0661f887c83d1aa720fb4a2f4284ac2ca37/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /home/max/.android/build-cache/99ba0fa71f6280a071e4db903c15fd6ffeb70e61/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /home/max/.android/build-cache/8f611ff7f15bd88e962775a3688b72bf6bbd5474/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] /home/max/.android/build-cache/2b586e2fd4ceed184b24ed3d83d8e443d61b25ed/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /home/max/.android/build-cache/4e606303e1ea72fa7c61b1746a0e2be8ce053fb4/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /home/max/.android/build-cache/f8ffc1813e938f2c0c13ed417d158fae493a53d0/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /home/max/.android/build-cache/0448fce0ba74788e983db3fe379f44b96c5440e2/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /home/max/.android/build-cache/25428ec6958f34b9855464d52584a24719ed83d0/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /home/max/.android/build-cache/7d491b0c34bfb9bd316f6191084f3263bc788927/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /home/max/.android/build-cache/e2a3fccbf8778a8ab6402c4dcde30d78446d4038/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/max/.android/build-cache/e65d78a730ecb6fdc0d35c1695cedb31afd7194a/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.volley:volley:1.0.0] /home/max/.android/build-cache/d88757eaa234c0dc5004673abb6494a8efad857a/output/AndroidManifest.xml:7:5-43
+MERGED from [com.androidplot:androidplot-core:1.5.1] /home/max/.android/build-cache/a63700343ad56a17a0b93c46aa25636941c93ea2/output/AndroidManifest.xml:26:5-28:41
+MERGED from [com.halfhp.fig:figlib:1.0.3] /home/max/.android/build-cache/cac96fccc6ba1993a50ec8dc2afdb51abaf8b3fd/output/AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.0.0-alpha1] /home/max/.android/build-cache/e445f1844b66111a8bb808edd31fc0e78566aa07/output/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/max/AndroidStudioProjects/LabconcoApp/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.0.0-alpha1] /home/max/.android/build-cache/e445f1844b66111a8bb808edd31fc0e78566aa07/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /home/max/.android/build-cache/290f8ae814851951ec29cedb8653c0d1a1446a72/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /home/max/.android/build-cache/5d68c0661f887c83d1aa720fb4a2f4284ac2ca37/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /home/max/.android/build-cache/99ba0fa71f6280a071e4db903c15fd6ffeb70e61/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /home/max/.android/build-cache/8f611ff7f15bd88e962775a3688b72bf6bbd5474/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] /home/max/.android/build-cache/2b586e2fd4ceed184b24ed3d83d8e443d61b25ed/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /home/max/.android/build-cache/4e606303e1ea72fa7c61b1746a0e2be8ce053fb4/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /home/max/.android/build-cache/f8ffc1813e938f2c0c13ed417d158fae493a53d0/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /home/max/.android/build-cache/0448fce0ba74788e983db3fe379f44b96c5440e2/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /home/max/.android/build-cache/25428ec6958f34b9855464d52584a24719ed83d0/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /home/max/.android/build-cache/7d491b0c34bfb9bd316f6191084f3263bc788927/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /home/max/.android/build-cache/e2a3fccbf8778a8ab6402c4dcde30d78446d4038/output/AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:design:26.0.0-alpha1] /home/max/.android/build-cache/e445f1844b66111a8bb808edd31fc0e78566aa07/output/AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:design:26.0.0-alpha1] /home/max/.android/build-cache/e445f1844b66111a8bb808edd31fc0e78566aa07/output/AndroidManifest.xml:26:9-47
