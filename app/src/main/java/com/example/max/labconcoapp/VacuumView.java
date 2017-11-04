@@ -19,16 +19,19 @@ import android.widget.TextView;
  * Use the {@link VacuumView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class VacuumView extends Fragment {
+public class VacuumView extends Fragment
+{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private OnFragmentInteractionListener mListener;
 
-    public VacuumView() {
+    public VacuumView()
+    {
         // Required empty public constructor
     }
 
-    public static VacuumView newInstance(Vacuum vac) {
+    public static VacuumView newInstance(Vacuum vac)
+    {
         VacuumView fragment = new VacuumView();
         Bundle args = new Bundle();
         args.putString("vac", vac.displayState());
@@ -38,16 +41,19 @@ public class VacuumView extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
+        if (getArguments() != null)
+        {
 
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View vView = inflater.inflate(R.layout.fragment_vacuum_view, container, false);
         TextView tView = (TextView) vView.findViewById(R.id.vactext);
@@ -55,7 +61,7 @@ public class VacuumView extends Fragment {
         String vacState = getArguments().getString("vac");
         tView.setText(vacState);
 
-        if(vacState.contains("High"))
+        if (vacState.contains("High"))
         {
             //System.out.println("REDDDD");
             tView.setTextColor(Color.parseColor("#f44242"));
@@ -66,25 +72,31 @@ public class VacuumView extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
+    public void onButtonPressed(Uri uri)
+    {
+        if (mListener != null)
+        {
             mListener.onFragmentInteraction(uri);
         }
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context)
+    {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
+        if (context instanceof OnFragmentInteractionListener)
+        {
             mListener = (OnFragmentInteractionListener) context;
-        } else {
+        } else
+        {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
 
     @Override
-    public void onDetach() {
+    public void onDetach()
+    {
         super.onDetach();
         mListener = null;
     }
@@ -99,7 +111,8 @@ public class VacuumView extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
+    public interface OnFragmentInteractionListener
+    {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }

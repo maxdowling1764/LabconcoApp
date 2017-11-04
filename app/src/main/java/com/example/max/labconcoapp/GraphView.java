@@ -29,7 +29,8 @@ import java.util.Arrays;
  * Use the {@link GraphView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GraphView extends Fragment {
+public class GraphView extends Fragment
+{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -47,19 +48,22 @@ public class GraphView extends Fragment {
     private Spinner csvspinner;
     private Spinner valuespinner;
 
-    public GraphView() {
+    public GraphView()
+    {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static GraphView newInstance(GraphObj graphObj2) {
+    public static GraphView newInstance(GraphObj graphObj2)
+    {
         GraphView fragment = new GraphView();
         System.out.println("new Instance of GraphView");
         Bundle args = new Bundle();
 
         graphObj = graphObj2;
         double[] tempArr = new double[graphObj.getTemps().size()];
-        for (int i = 0; i < tempArr.length; i++) {
+        for (int i = 0; i < tempArr.length; i++)
+        {
             tempArr[i] = graphObj.getTemps().get(i);
         }
         args.putDoubleArray("tempVals", tempArr);
@@ -72,10 +76,12 @@ public class GraphView extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
+        if (getArguments() != null)
+        {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
@@ -85,7 +91,8 @@ public class GraphView extends Fragment {
     public void changeSeries(GraphObj graphObj)
     {
         double[] tempArr = new double[graphObj.getTemps().size()];
-        for (int i = 0; i < tempArr.length; i++) {
+        for (int i = 0; i < tempArr.length; i++)
+        {
             tempArr[i] = graphObj.getTemps().get(i);
         }
 
@@ -95,7 +102,8 @@ public class GraphView extends Fragment {
         double[] tVals = getArguments().getDoubleArray("tempVals");
 
         Number[] series1Numbers = new Number[tVals.length];
-        for (int i = 0; i < tVals.length; i++) {
+        for (int i = 0; i < tVals.length; i++)
+        {
             //System.out.println(gobj.get(i));
             series1Numbers[i] = tVals[i];
         }
@@ -125,7 +133,8 @@ public class GraphView extends Fragment {
 
     public void updateCSVSpinner(ArrayList<String> vals)
     {
-        if(getContext() != null) {
+        if (getContext() != null)
+        {
             ArrayAdapter<String> csvAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, vals);
             csvAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             csvspinner.setAdapter(csvAdapter);
@@ -135,20 +144,20 @@ public class GraphView extends Fragment {
     public void updateValSpinner()
     {
         ArrayList<String> vals = new ArrayList<>();
-        for(int i = 0; i < MainScreen.fd.getGobjArrSize(); i++)
+        for (int i = 0; i < MainScreen.fd.getGobjArrSize(); i++)
         {
             String t = MainScreen.fd.getGraphObjectAtIndex(i).getTitle();
-            if(t != null)
+            if (t != null)
             {
                 vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
-            }
-            else {
+            } else
+            {
                 vals.add("Not Available");
             }
 
             //vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
         }
-        ArrayAdapter<String> valueAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,vals);
+        ArrayAdapter<String> valueAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, vals);
         valueAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         valuespinner.setAdapter(valueAdapter);
 
@@ -156,7 +165,8 @@ public class GraphView extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
 
         final View v = inflater.inflate(R.layout.fragment_graph_view, container, false);
@@ -169,15 +179,13 @@ public class GraphView extends Fragment {
         ArrayList<String> csvs = new ArrayList<>();
 
 
-
-        for(int i = 0; i < MainScreen.fd.getGobjArrSize(); i++)
+        for (int i = 0; i < MainScreen.fd.getGobjArrSize(); i++)
         {
             String t = MainScreen.fd.getGraphObjectAtIndex(i).getTitle();
-            if(t != null)
+            if (t != null)
             {
                 vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
-            }
-            else
+            } else
             {
                 vals.add("Not Available");
             }
@@ -185,49 +193,54 @@ public class GraphView extends Fragment {
             //vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
         }
 
-        for(int i = 0; i < MainScreen.fd.getAvailableCSVsLength(); i++)
+        for (int i = 0; i < MainScreen.fd.getAvailableCSVsLength(); i++)
         {
             String t = MainScreen.fd.getCSV(i);
-            if(t != null)
+            if (t != null)
             {
                 csvs.add(t);
-            }
-            else
+            } else
             {
                 csvs.add("Not Available");
             }
         }
         //Possibly use context from v
 
-        ArrayAdapter<String> csvAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,csvs);
+        ArrayAdapter<String> csvAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, csvs);
 
-        ArrayAdapter<String> valueAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,vals);
+        ArrayAdapter<String> valueAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, vals);
 
         csvAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         valueAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        valuespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        valuespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
 
-               ((MainScreen)v.getContext()).changeSeries(i);
+                ((MainScreen) v.getContext()).changeSeries(i);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
 
             }
         });
 
-        csvspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        csvspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
 
-                ((MainScreen)v.getContext()).changeCSV(csvspinner.getSelectedItem().toString());
+                ((MainScreen) v.getContext()).changeCSV(csvspinner.getSelectedItem().toString());
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
 
             }
         });
@@ -238,7 +251,8 @@ public class GraphView extends Fragment {
         double[] tVals = getArguments().getDoubleArray("tempVals");
 
         Number[] series1Numbers = new Number[tVals.length];
-        for (int i = 0; i < tVals.length; i++) {
+        for (int i = 0; i < tVals.length; i++)
+        {
             //System.out.println(gobj.get(i));
             series1Numbers[i] = tVals[i];
         }
@@ -265,25 +279,31 @@ public class GraphView extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
+    public void onButtonPressed(Uri uri)
+    {
+        if (mListener != null)
+        {
             mListener.onFragmentInteraction(uri);
         }
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context)
+    {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
+        if (context instanceof OnFragmentInteractionListener)
+        {
             mListener = (OnFragmentInteractionListener) context;
-        } else {
+        } else
+        {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
 
     @Override
-    public void onDetach() {
+    public void onDetach()
+    {
         super.onDetach();
         mListener = null;
     }
@@ -298,7 +318,8 @@ public class GraphView extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
+    public interface OnFragmentInteractionListener
+    {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }

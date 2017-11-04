@@ -12,12 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-
-public class DownloadDialogFragment extends DialogFragment {
+public class DownloadDialogFragment extends DialogFragment
+{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+    public Dialog onCreateDialog(Bundle savedInstanceState)
+    {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage("Fetching Data...");

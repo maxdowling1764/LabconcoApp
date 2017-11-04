@@ -48,7 +48,6 @@ public class MainScreen extends AppCompatActivity
     public static String csvUrl = "";
 
 
-
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -62,18 +61,18 @@ public class MainScreen extends AppCompatActivity
     public IPAddressDialogFragment ipdFrag;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-
-        if(firstRun)
+        if (firstRun)
         {
             new DownloadCSV(this).execute(csvUrl);
-            fd = new FreezeDryer("http://"+ip, "freezeDry1", jsonDump);
+            fd = new FreezeDryer("http://" + ip, "freezeDry1", jsonDump);
             firstRun = false;
         }
 
@@ -93,31 +92,37 @@ public class MainScreen extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } else
+        {
             super.onBackPressed();
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_screen, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             displayIPDialog();
             return true;
         }
@@ -128,19 +133,23 @@ public class MainScreen extends AppCompatActivity
     public void fetchJson()
     {
         RequestQueue q = Volley.newRequestQueue(this);
-        String url = "http://"+ip+"/dump";
+        String url = "http://" + ip + "/dump";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
+                new Response.Listener<String>()
+                {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response)
+                    {
                         // Display the first 500 characters of the response string.
                         MainScreen.jsonDump = response;
 
                     }
-                }, new Response.ErrorListener() {
+                }, new Response.ErrorListener()
+        {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onErrorResponse(VolleyError error)
+            {
                 MainScreen.jsonDump = "error";
             }
         });
@@ -149,7 +158,8 @@ public class MainScreen extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -158,24 +168,27 @@ public class MainScreen extends AppCompatActivity
 
         //System.out.println(csvUrl);
 
-        if (id == R.id.nav_vacuum) {
+        if (id == R.id.nav_vacuum)
+        {
             Fragment vacFrag = VacuumView.newInstance(fd.getVacuum());
             swapViewFragment(vacFrag);
 
-        } else if (id == R.id.nav_temp) {
+        } else if (id == R.id.nav_temp)
+        {
             Fragment tempFrag = TempView.newInstance(fd.getTemperatureSensors());
             swapViewFragment(tempFrag);
 
-        } else if (id == R.id.nav_timing) {
+        } else if (id == R.id.nav_timing)
+        {
             Fragment timeFrag = TimingView.newInstance(fd.getTimeCluster());
             swapViewFragment(timeFrag);
 
-        }
-        else if (id == R.id.nav_graph) {
+        } else if (id == R.id.nav_graph)
+        {
             Fragment graphFrag = GraphView.newInstance(fd.getGraphObjectAtIndex(0));
             swapViewFragment(graphFrag);
             System.err.println("ALL AVAILABLE CSVS");
-            for(String s : fd.getAvailableCSVs())
+            for (String s : fd.getAvailableCSVs())
             {
                 System.err.println(s);
             }
@@ -199,14 +212,14 @@ public class MainScreen extends AppCompatActivity
 
     public void changeSeries(int index)
     {
-        GraphView graphFrag = (GraphView)getFragmentManager().findFragmentById(R.id.content_frame);
+        GraphView graphFrag = (GraphView) getFragmentManager().findFragmentById(R.id.content_frame);
         graphFrag.changeSeries(fd.getGraphObjectAtIndex(index));
         //getFragmentManager().beginTransaction().detach(graphFrag).attach(graphFrag).commit();
     }
 
     public void changeCSV(String csv)
     {
-        csvUrl = "http://"+ip+"/dir/" + csv;
+        csvUrl = "http://" + ip + "/dir/" + csv;
         System.err.println(csvUrl);
         new DownloadCSV(this).execute(csvUrl);
 
@@ -214,13 +227,14 @@ public class MainScreen extends AppCompatActivity
 
     public void postExecuteFunction()
     {
-        GraphView graphFrag = (GraphView)getFragmentManager().findFragmentById(R.id.content_frame);
+        GraphView graphFrag = (GraphView) getFragmentManager().findFragmentById(R.id.content_frame);
         graphFrag.updateValSpinner();
         graphFrag.changeSeries(fd.getGraphObjectAtIndex(0));
     }
+
     public void updateCSVSpinner()
     {
-        GraphView graphFrag = (GraphView)getFragmentManager().findFragmentById(R.id.content_frame);
+        GraphView graphFrag = (GraphView) getFragmentManager().findFragmentById(R.id.content_frame);
         graphFrag.updateCSVSpinner(fd.getAvailableCSVs());
 
     }
@@ -241,11 +255,12 @@ public class MainScreen extends AppCompatActivity
     {
         dFrag.dismiss();
     }
+
     public void dismissIPDialog()
     {
         fetchJson();
         new DownloadCSV(this).execute(csvUrl);
-        fd = new FreezeDryer("http://"+ip, "freezeDry1", jsonDump);
+        fd = new FreezeDryer("http://" + ip, "freezeDry1", jsonDump);
     }
 
     public static void setIp(String ip1)
@@ -254,18 +269,22 @@ public class MainScreen extends AppCompatActivity
 
         fd.setIp(ip);
 
-        csvUrl = "http://"+ ip +"/dir/nightrun.csv";
+        csvUrl = "http://" + ip + "/dir/nightrun.csv";
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri) {
+    public void onFragmentInteraction(Uri uri)
+    {
 
     }
-    public static void verifyStoragePermissions(Activity activity) {
+
+    public static void verifyStoragePermissions(Activity activity)
+    {
         // Check if we have write permission
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
-        if (permission != PackageManager.PERMISSION_GRANTED) {
+        if (permission != PackageManager.PERMISSION_GRANTED)
+        {
             // We don't have permission so prompt the user
             ActivityCompat.requestPermissions(
                     activity,

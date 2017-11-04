@@ -13,7 +13,8 @@ import java.util.Set;
  * Created by max on 9/27/17.
  */
 
-public class TemperatureSensors {
+public class TemperatureSensors
+{
     private HashMap<String, String> sensors;
 
     public TemperatureSensors(String json)
@@ -21,26 +22,28 @@ public class TemperatureSensors {
         JSONObject data;
 
         sensors = new HashMap<>();
-        try {
+        try
+        {
             data = new JSONObject(json);
             Iterator<String> keys = data.keys();
             ArrayList<String> tempKeyList = new ArrayList<>();
 
-            while(keys.hasNext())
+            while (keys.hasNext())
             {
                 String k = keys.next();
-                if(k.toLowerCase().contains("temp"))
+                if (k.toLowerCase().contains("temp"))
                 {
                     tempKeyList.add(k);
                 }
             }
 
-            for(String k : tempKeyList)
+            for (String k : tempKeyList)
             {
                 sensors.put(k, data.getString(k));
             }
 
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             e.printStackTrace();
         }
     }
@@ -53,7 +56,7 @@ public class TemperatureSensors {
 
         Collections.sort(keyList);
 
-        for(String s : keyList)
+        for (String s : keyList)
         {
             //System.out.println(sensors.get(s));
             t = t + s + ": " + sensors.get(s) + "\u00b0C \n";

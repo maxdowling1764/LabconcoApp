@@ -24,7 +24,8 @@ import java.util.ArrayList;
  * Created by max on 9/27/17.
  */
 
-public class FreezeDryer {
+public class FreezeDryer
+{
     private String url;
     private String name;
     private TemperatureSensors temperatureSensors;
@@ -33,7 +34,8 @@ public class FreezeDryer {
     private ArrayList<GraphObj> gobjArr;
     private ArrayList<String> availableCSVs;
 
-    public FreezeDryer(String url, String name, String json) {
+    public FreezeDryer(String url, String name, String json)
+    {
         GraphObj.clearMem();
         GraphObj.loadCSV();
         this.name = name;
@@ -46,7 +48,8 @@ public class FreezeDryer {
 
         gobjArr.add(new GraphObj(8));
         //System.out.println("new instance of freezedryer");
-        for (int i = 1; i < gobjArr.get(0).getNumTemps(); i++) {
+        for (int i = 1; i < gobjArr.get(0).getNumTemps(); i++)
+        {
             loadGraphIndex(i);
         }
         //System.err.println("SIZE: " + gobjArr.size());
@@ -106,13 +109,14 @@ public class FreezeDryer {
     public void loadGraphIndex(int index)
     {
         // add 8 to offset the non shelf temps
-        gobjArr.add(new GraphObj(index+8));
+        gobjArr.add(new GraphObj(index + 8));
     }
 
     public Vacuum getVacuum()
     {
         return vacuum;
     }
+
     public GraphObj getGraphObjectAtIndex(int index)
     {
         return gobjArr.get(index);
@@ -140,6 +144,6 @@ public class FreezeDryer {
 
     public void setIp(String ip)
     {
-        this.url = "http://"+ip;
+        this.url = "http://" + ip;
     }
 }

@@ -7,7 +7,8 @@ import org.json.JSONObject;
  * Created by max on 9/27/17.
  */
 
-public class TimeCluster {
+public class TimeCluster
+{
     private String date;
     private String time;
     //private String timeRemaining;
@@ -16,20 +17,22 @@ public class TimeCluster {
     public TimeCluster(String json)
     {
         JSONObject data;
-        try {
+        try
+        {
             data = new JSONObject(json);
             String t = data.getString("time");
-            t = t.substring(9,11) + ":" + t.substring(11,13);
+            t = t.substring(9, 11) + ":" + t.substring(11, 13);
             this.time = t;
 
             String d = data.getString("date");
-            d = d.substring(4,6) + "-" + d.substring(6,8) + "-" + d.substring(0,4);
+            d = d.substring(4, 6) + "-" + d.substring(6, 8) + "-" + d.substring(0, 4);
             this.date = d;
 
             String i = data.getString("programStep");
             this.programStep = Integer.parseInt(i);
 
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             this.date = "00-00-00";
             this.time = "00:00";
             this.programStep = -1;
@@ -42,19 +45,23 @@ public class TimeCluster {
         return "Time: " + getTime() + "\nDate: " + getDate() + "\nStep: " + getProgramStep();
     }
 
-    public String getDate() {
+    public String getDate()
+    {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(String date)
+    {
         this.date = date;
     }
 
-    public String getTime() {
+    public String getTime()
+    {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(String time)
+    {
         this.time = time;
     }
 

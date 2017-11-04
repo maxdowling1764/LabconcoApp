@@ -16,20 +16,23 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-class DownloadCSVHeader extends AsyncTask<String, String, String> {
+class DownloadCSVHeader extends AsyncTask<String, String, String>
+{
 
     /**
      * Before starting background thread
-     * */
+     */
 
     MainScreen a;
+
     public DownloadCSVHeader(MainScreen a)
     {
         this.a = a;
     }
 
     @Override
-    protected void onPreExecute() {
+    protected void onPreExecute()
+    {
         super.onPreExecute();
         System.err.println("PreExecute");
         a.displayDialog();
@@ -37,16 +40,17 @@ class DownloadCSVHeader extends AsyncTask<String, String, String> {
 
     /**
      * Downloading file in background thread
-     * */
+     */
     @Override
-    protected String doInBackground(String... f_url) {
+    protected String doInBackground(String... f_url)
+    {
         int count;
         System.err.println("DOWNLOADING.......");
-        try {
+        try
+        {
             String root = Environment.getExternalStorageDirectory().toString();
 
             URL url = new URL(f_url[0]);
-
 
 
             URLConnection connection = url.openConnection();
@@ -66,7 +70,8 @@ class DownloadCSVHeader extends AsyncTask<String, String, String> {
             byte data[] = new byte[2048];
 
             long total = 0;
-            while ((count = input.read(data)) != -1) {
+            while ((count = input.read(data)) != -1)
+            {
                 total += count;
 
                 // writing data to file
@@ -83,7 +88,8 @@ class DownloadCSVHeader extends AsyncTask<String, String, String> {
             input.close();
 
 
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Log.e("Error: ", e.getMessage());
         }
 
@@ -92,14 +98,15 @@ class DownloadCSVHeader extends AsyncTask<String, String, String> {
     }
 
 
-
     /**
      * After completing background task
-     * **/
+     **/
     @Override
-    protected void onPostExecute(String file_url) {
+    protected void onPostExecute(String file_url)
+    {
         System.err.println("Dismissed Dialog");
-        if((GraphView)a.getFragmentManager().findFragmentById(R.id.content_frame) != null) {
+        if ((GraphView) a.getFragmentManager().findFragmentById(R.id.content_frame) != null)
+        {
             MainScreen.fd = new FreezeDryer("http://" + MainScreen.ip, "freezeDry1", MainScreen.jsonDump);
             MainScreen.fd.fetchCSVList();
             a.postExecuteFunction();

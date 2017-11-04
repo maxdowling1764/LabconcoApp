@@ -7,16 +7,19 @@ import org.json.JSONObject;
  * Created by max on 9/27/17.
  */
 
-public class Vacuum {
+public class Vacuum
+{
     private String state;
 
     public Vacuum(String json)
     {
         JSONObject data;
-        try {
+        try
+        {
             data = new JSONObject(json);
             this.state = data.getString("vacuumLevel");
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             e.printStackTrace();
             this.state = "None";
         }

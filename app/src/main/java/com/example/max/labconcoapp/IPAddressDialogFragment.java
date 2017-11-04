@@ -17,20 +17,24 @@ import android.widget.EditText;
 import java.io.IOException;
 
 
-public class IPAddressDialogFragment extends DialogFragment {
+public class IPAddressDialogFragment extends DialogFragment
+{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
     private EditText textField;
 
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+    public Dialog onCreateDialog(Bundle savedInstanceState)
+    {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         View v = getActivity().getLayoutInflater().inflate(R.layout.fragment_ipaddress_dialog, null);
         Button button = (Button) v.findViewById(R.id.ip_button);
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener()
+        {
 
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 dismiss();
             }
         });
@@ -43,9 +47,10 @@ public class IPAddressDialogFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    public void onDismiss(DialogInterface dialog)
+    {
 
-        MainScreen m = (MainScreen)getActivity();
+        MainScreen m = (MainScreen) getActivity();
         MainScreen.setIp(textField.getText().toString());
         System.err.println("SCROOOOOO: " + MainScreen.ip);
 
