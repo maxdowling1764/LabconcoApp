@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="/home/max/AndroidStudioProjects/LabconcoApp/app/libs/jsoup-1.10.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5df02f295714ac1b907d507dfea29a5a9f8f69ca">
+        <dex dex="/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/jsoup-1.10.3_7f67d5db7101f7211f2fb1fad27c815557c77000/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"

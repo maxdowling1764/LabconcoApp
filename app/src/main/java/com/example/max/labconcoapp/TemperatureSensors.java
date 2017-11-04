@@ -55,7 +55,7 @@ public class TemperatureSensors {
 
         for(String s : keyList)
         {
-            System.out.println(sensors.get(s));
+            //System.out.println(sensors.get(s));
             t = t + s + ": " + sensors.get(s) + "\u00b0C \n";
         }
         return t;

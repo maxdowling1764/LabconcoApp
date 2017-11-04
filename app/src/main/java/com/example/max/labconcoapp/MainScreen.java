@@ -7,6 +7,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -44,7 +45,9 @@ public class MainScreen extends AppCompatActivity
 {
     public static String jsonDump = "";
     public static String ip = "";
-    public static String csvUrl = "http://"+ip+"/dir/nightrun.csv";
+    public static String csvUrl = "";
+
+
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
@@ -67,11 +70,10 @@ public class MainScreen extends AppCompatActivity
 
 
 
-
         if(firstRun)
         {
             new DownloadCSV(this).execute(csvUrl);
-            fd = new FreezeDryer("http://"+ip+"/dump", "freezeDry1", jsonDump);
+            fd = new FreezeDryer("http://"+ip, "freezeDry1", jsonDump);
             firstRun = false;
         }
 
@@ -86,7 +88,7 @@ public class MainScreen extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         verifyStoragePermissions(this);
 
-        System.out.println("onCreate Called");
+        //System.out.println("onCreate Called");
 
     }
 
@@ -154,7 +156,7 @@ public class MainScreen extends AppCompatActivity
 
         fd.updateJson(jsonDump);
 
-        System.out.println(csvUrl);
+        //System.out.println(csvUrl);
 
         if (id == R.id.nav_vacuum) {
             Fragment vacFrag = VacuumView.newInstance(fd.getVacuum());
@@ -172,6 +174,13 @@ public class MainScreen extends AppCompatActivity
         else if (id == R.id.nav_graph) {
             Fragment graphFrag = GraphView.newInstance(fd.getGraphObjectAtIndex(0));
             swapViewFragment(graphFrag);
+            System.err.println("ALL AVAILABLE CSVS");
+            for(String s : fd.getAvailableCSVs())
+            {
+                System.err.println(s);
+            }
+            ((GraphView) graphFrag).updateCSVSpinner(fd.getAvailableCSVs());
+            //updateCSVSpinner();
         }
 
 
@@ -190,8 +199,30 @@ public class MainScreen extends AppCompatActivity
 
     public void changeSeries(int index)
     {
-        Fragment graphFrag = GraphView.newInstance(fd.getGraphObjectAtIndex(index));
-        swapViewFragment(graphFrag);
+        GraphView graphFrag = (GraphView)getFragmentManager().findFragmentById(R.id.content_frame);
+        graphFrag.changeSeries(fd.getGraphObjectAtIndex(index));
+        //getFragmentManager().beginTransaction().detach(graphFrag).attach(graphFrag).commit();
+    }
+
+    public void changeCSV(String csv)
+    {
+        csvUrl = "http://"+ip+"/dir/" + csv;
+        System.err.println(csvUrl);
+        new DownloadCSV(this).execute(csvUrl);
+
+    }
+
+    public void postExecuteFunction()
+    {
+        GraphView graphFrag = (GraphView)getFragmentManager().findFragmentById(R.id.content_frame);
+        graphFrag.updateValSpinner();
+        graphFrag.changeSeries(fd.getGraphObjectAtIndex(0));
+    }
+    public void updateCSVSpinner()
+    {
+        GraphView graphFrag = (GraphView)getFragmentManager().findFragmentById(R.id.content_frame);
+        graphFrag.updateCSVSpinner(fd.getAvailableCSVs());
+
     }
 
     public void displayDialog()
@@ -214,12 +245,15 @@ public class MainScreen extends AppCompatActivity
     {
         fetchJson();
         new DownloadCSV(this).execute(csvUrl);
-        fd = new FreezeDryer("http://"+ip+"/dump", "freezeDry1", jsonDump);
+        fd = new FreezeDryer("http://"+ip, "freezeDry1", jsonDump);
     }
 
     public static void setIp(String ip1)
     {
         ip = ip1;
+
+        fd.setIp(ip);
+
         csvUrl = "http://"+ ip +"/dir/nightrun.csv";
     }
 

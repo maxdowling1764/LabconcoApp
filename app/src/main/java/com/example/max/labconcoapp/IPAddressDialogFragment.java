@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.IOException;
+
 
 public class IPAddressDialogFragment extends DialogFragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -45,6 +47,11 @@ public class IPAddressDialogFragment extends DialogFragment {
 
         MainScreen m = (MainScreen)getActivity();
         MainScreen.setIp(textField.getText().toString());
+        System.err.println("SCROOOOOO: " + MainScreen.ip);
+
+        MainScreen.fd.fetchCSVList();
+        //MainScreen.doesCSVSpinnerRequireUpdate = true;
+
         m.dismissIPDialog();
         super.onDismiss(dialog);
     }

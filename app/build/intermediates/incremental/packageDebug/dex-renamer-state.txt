@@ -1,4 +1,4 @@
-#Thu Nov 02 12:55:26 CDT 2017
+#Fri Nov 03 16:41:42 CDT 2017
 base.0=/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a525a85cafbc0022ab3d861a0aa8d3e171e53a1d
 renamed.1=classes.dex
 renamed.0=classes2.dex

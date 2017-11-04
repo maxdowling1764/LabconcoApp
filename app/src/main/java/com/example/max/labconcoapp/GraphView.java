@@ -8,6 +8,9 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
@@ -41,6 +44,8 @@ public class GraphView extends Fragment {
     private ArrayList<Double> gobj;
     public static GraphObj graphObj;
     private OnFragmentInteractionListener mListener;
+    private Spinner csvspinner;
+    private Spinner valuespinner;
 
     public GraphView() {
         // Required empty public constructor
@@ -52,18 +57,17 @@ public class GraphView extends Fragment {
         System.out.println("new Instance of GraphView");
         Bundle args = new Bundle();
 
-            graphObj = graphObj2;
-            double[] tempArr = new double[graphObj.getTemps().size()];
-            for(int i = 0; i < tempArr.length; i++)
-            {
-                tempArr[i] = graphObj.getTemps().get(i);
-            }
-            args.putDoubleArray("tempVals", tempArr);
-            args.putString("title", graphObj.getTitle());
-            //fragment.gobj = graphObj.getTemps();
-            fragment.setArguments(args);
+        graphObj = graphObj2;
+        double[] tempArr = new double[graphObj.getTemps().size()];
+        for (int i = 0; i < tempArr.length; i++) {
+            tempArr[i] = graphObj.getTemps().get(i);
+        }
+        args.putDoubleArray("tempVals", tempArr);
+        args.putString("title", graphObj.getTitle());
+        //fragment.gobj = graphObj.getTemps();
+        fragment.setArguments(args);
 
-
+        //fragment.updateCSVSpinner(MainScreen.fd.getAvailableCSVs());
         return fragment;
     }
 
@@ -78,20 +82,20 @@ public class GraphView extends Fragment {
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public void changeSeries(GraphObj graphObj)
+    {
+        double[] tempArr = new double[graphObj.getTemps().size()];
+        for (int i = 0; i < tempArr.length; i++) {
+            tempArr[i] = graphObj.getTemps().get(i);
+        }
 
-        View v = inflater.inflate(R.layout.fragment_graph_view, container, false);
-
-        plot = v.findViewById(R.id.plot);
+        getArguments().putDoubleArray("tempVals", tempArr);
+        getArguments().putString("title", graphObj.getTitle());
 
         double[] tVals = getArguments().getDoubleArray("tempVals");
 
         Number[] series1Numbers = new Number[tVals.length];
-        for(int i = 0; i < tVals.length; i++)
-        {
+        for (int i = 0; i < tVals.length; i++) {
             //System.out.println(gobj.get(i));
             series1Numbers[i] = tVals[i];
         }
@@ -105,9 +109,152 @@ public class GraphView extends Fragment {
 
         LineAndPointFormatter series1Format = new LineAndPointFormatter();
         series1Format.getLinePaint().setStrokeWidth(7.0f);
-        series1Format.getLinePaint().setColor(Color.rgb(0,255,0));
+        series1Format.getLinePaint().setColor(Color.rgb(0, 255, 0));
         series1Format.getFillPaint().setColor(Color.TRANSPARENT);
-        series1Format.getVertexPaint().setColor(Color.rgb(0,255,0));
+        series1Format.getVertexPaint().setColor(Color.rgb(0, 255, 0));
+        series1Format.getVertexPaint().setStrokeWidth(0.0f);
+        // add a new series' to the xyplot:
+        plot.clear();
+        plot.addSeries(series1, series1Format);
+        plot.setTitle(getArguments().getString("title"));
+
+        plot.redraw();
+        //fragment.gobj = graphObj.getTemps();
+
+    }
+
+    public void updateCSVSpinner(ArrayList<String> vals)
+    {
+        if(getContext() != null) {
+            ArrayAdapter<String> csvAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, vals);
+            csvAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            csvspinner.setAdapter(csvAdapter);
+        }
+    }
+
+    public void updateValSpinner()
+    {
+        ArrayList<String> vals = new ArrayList<>();
+        for(int i = 0; i < MainScreen.fd.getGobjArrSize(); i++)
+        {
+            String t = MainScreen.fd.getGraphObjectAtIndex(i).getTitle();
+            if(t != null)
+            {
+                vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
+            }
+            else {
+                vals.add("Not Available");
+            }
+
+            //vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
+        }
+        ArrayAdapter<String> valueAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,vals);
+        valueAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        valuespinner.setAdapter(valueAdapter);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+        final View v = inflater.inflate(R.layout.fragment_graph_view, container, false);
+
+        plot = v.findViewById(R.id.plot);
+        csvspinner = (Spinner) v.findViewById(R.id.csv_spinner);
+        valuespinner = (Spinner) v.findViewById(R.id.value_spinner);
+
+        ArrayList<String> vals = new ArrayList<>();
+        ArrayList<String> csvs = new ArrayList<>();
+
+
+
+        for(int i = 0; i < MainScreen.fd.getGobjArrSize(); i++)
+        {
+            String t = MainScreen.fd.getGraphObjectAtIndex(i).getTitle();
+            if(t != null)
+            {
+                vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
+            }
+            else
+            {
+                vals.add("Not Available");
+            }
+
+            //vals.add(MainScreen.fd.getGraphObjectAtIndex(i).getTitle());
+        }
+
+        for(int i = 0; i < MainScreen.fd.getAvailableCSVsLength(); i++)
+        {
+            String t = MainScreen.fd.getCSV(i);
+            if(t != null)
+            {
+                csvs.add(t);
+            }
+            else
+            {
+                csvs.add("Not Available");
+            }
+        }
+        //Possibly use context from v
+
+        ArrayAdapter<String> csvAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,csvs);
+
+        ArrayAdapter<String> valueAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,vals);
+
+        csvAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        valueAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        valuespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+               ((MainScreen)v.getContext()).changeSeries(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        csvspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                ((MainScreen)v.getContext()).changeCSV(csvspinner.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        csvspinner.setAdapter(csvAdapter);
+        valuespinner.setAdapter(valueAdapter);
+
+        double[] tVals = getArguments().getDoubleArray("tempVals");
+
+        Number[] series1Numbers = new Number[tVals.length];
+        for (int i = 0; i < tVals.length; i++) {
+            //System.out.println(gobj.get(i));
+            series1Numbers[i] = tVals[i];
+        }
+
+
+        XYSeries series1 = new SimpleXYSeries(
+                Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
+                SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
+                "Series1");
+        //LineAndPointFormatter series1Format = new LineAndPointFormatter(v.getContext(), R.xml.line_point_formatter_with_labels);
+
+        LineAndPointFormatter series1Format = new LineAndPointFormatter();
+        series1Format.getLinePaint().setStrokeWidth(7.0f);
+        series1Format.getLinePaint().setColor(Color.rgb(0, 255, 0));
+        series1Format.getFillPaint().setColor(Color.TRANSPARENT);
+        series1Format.getVertexPaint().setColor(Color.rgb(0, 255, 0));
         series1Format.getVertexPaint().setStrokeWidth(0.0f);
         // add a new series' to the xyplot:
         plot.addSeries(series1, series1Format);

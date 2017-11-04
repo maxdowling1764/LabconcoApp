@@ -57,7 +57,7 @@ public class VacuumView extends Fragment {
 
         if(vacState.contains("High"))
         {
-            System.out.println("REDDDD");
+            //System.out.println("REDDDD");
             tView.setTextColor(Color.parseColor("#f44242"));
         }
 
