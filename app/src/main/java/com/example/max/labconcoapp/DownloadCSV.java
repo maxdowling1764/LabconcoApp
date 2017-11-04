@@ -98,10 +98,12 @@ class DownloadCSV extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String file_url) {
         System.err.println("Dismissed Dialog");
-        if((GraphView)a.getFragmentManager().findFragmentById(R.id.content_frame) != null) {
-            MainScreen.fd = new FreezeDryer("http://" + MainScreen.ip, "freezeDry1", MainScreen.jsonDump);
-            MainScreen.fd.fetchCSVList();
-            a.postExecuteFunction();
+        if(a.getFragmentManager().findFragmentById(R.id.content_frame) instanceof GraphView) {
+            if ((GraphView) a.getFragmentManager().findFragmentById(R.id.content_frame) != null) {
+                MainScreen.fd = new FreezeDryer("http://" + MainScreen.ip, "freezeDry1", MainScreen.jsonDump);
+                MainScreen.fd.fetchCSVList();
+                a.postExecuteFunction();
+            }
         }
         a.dismissDialog();
     }

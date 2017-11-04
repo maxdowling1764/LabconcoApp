@@ -1,4 +1,4 @@
-#Fri Nov 03 23:10:29 CDT 2017
-base.0=/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9
+#Sat Nov 04 15:39:41 CDT 2017
+base.0=/home/max/StudioProjects/LabconcoApp/app/build/intermediates/transforms/dexMerger/debug/10
 renamed.0=classes.dex
-file.0=/home/max/AndroidStudioProjects/LabconcoApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex
+file.0=/home/max/StudioProjects/LabconcoApp/app/build/intermediates/transforms/dexMerger/debug/10/classes.dex

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.halfhp.fig:figlib-1.0.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/figlib-1.0.3.aar/aacf6d371cff2b636e6633c3e4939b78/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/figlib-1.0.3.aar/aacf6d371cff2b636e6633c3e4939b78/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.halfhp.fig/figlib/1.0.3/1e773763f6e242a85e67cc6dc3245f68911932bb/figlib-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

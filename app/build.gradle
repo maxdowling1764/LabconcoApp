@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.max.labconcoapp"
         minSdkVersion 23
@@ -31,5 +31,5 @@ dependencies {
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.androidplot:androidplot-core:1.5.1'
     testCompile 'junit:junit:4.12'
-    compile files('libs/jsoup-1.10.3.jar')
+    implementation files('libs/jsoup-1.10.3.jar')
 }
